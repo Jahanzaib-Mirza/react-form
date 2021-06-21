@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { Route,Switch } from 'react-router-dom';
+// import Form from './Component/Form'
+import Personal from './Component/Personal';
+import Guardian from './Component/Guardian';
+import Employment from './Component/Employment';
+import Education from './Component/Education';
+import Reference from './Component/Reference';
+import Device from './Component/Device';
+
+
+// function App() {
+//   return (
+//     <>
+//     <Form />
+//     </>
+//   );
+// }
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return(
+  
+     <Switch>
+      <Route exact path="/" component={Personal} />
+      <Route path="/guardian" component={Guardian} />
+      <Route path="/employment" component={Employment} />
+      <Route path="/education" component={Education} />
+      <Route path="/reference" component={Reference} />
+      <Route path="/device" component={Device} />
+    </Switch>
+    
   );
-}
+};
 
 export default App;
